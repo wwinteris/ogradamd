@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ograda TV</title>
+    <style>
+        body{
+            background: lightblue;
+        }
+        #title{
+            border: 4px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            width: 450px;
+            background-color: lightyellow;
+        }
+        #title_two{
+            color: red;
+        }
+        video{
+            border-radius: 10px;
+            border: 4px solid red;
+        }
+        #comment{
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #button_comment{
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+   <center><h1 id="title"><b id="title_two"><i>Ograda TV -</i></b> Stirile tale!</h1></center>
+   <center><h2><i>str. Tudor Vladimirescu 16</i></h2></center>
+   <br>
+   <br>
+   <center><h4>Stirea: 25.06.2026</h4></center>
+   <br>
+   <br>
+   <center>
+    <video width="200px" controls>
+        <source src="ogradamd1.mp4" type="video/mp4">
+        Browserul tău nu suportă videoclipuri.
+    </video>
+</center>
+<br>
+<center>
+    <input type="text" placeholder="Scrie un comentariu..." id="comment">
+    <button id="button_comment" onclick="send()">Trimite</button>
+</center>
+</body>
+<script>
+    function send(){
+        let message = document.getElementById("comment").value.trim();
+        if(message === ""){
+            alert("Scrie un comentariu inainte de a trimite!");
+        }
+        else{
+            alert("Comentariu salvat: " + message);
+            document.getElementById("comment").value = "";
+        }
+    }    
+</script>
+</html>
